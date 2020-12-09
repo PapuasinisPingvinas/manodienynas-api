@@ -10,10 +10,10 @@ You may want to view the code in JS. Type `npm run compile` to compile CoffeeScr
 The schema is:
 ```json
 {
-    "id": "", // manodienynas id
-    "username": "", // your email
-    "password": "", // your password
-    "tr": "2", // tr:nth-child()
-    "td": "3" // td:nth-child()
+    "id": "", /*manodienynas id*/
+    "username": "", /*your email*/
+    "password": "", /*your password*/
+    "tr": "2", /*tr:nth-child()*/
+    "td": "3" /*td:nth-child()*/
 }
 ```
