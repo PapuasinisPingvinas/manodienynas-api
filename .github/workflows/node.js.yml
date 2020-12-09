@@ -26,4 +26,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm install --save-dev coffeescript
-    - run: npm start
+    - run: npm run compile
+    - run: node index.js
