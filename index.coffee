@@ -18,7 +18,7 @@ sleep = (ms) ->
   new Promise (resolve) =>
     setTimeout resolve, ms
 
-scrape = (uri, username, password, selector) ->
+scrape = (uri, username, password, mode, selector) ->
     browser = await puppeteer.launch()
     page = await browser.newPage()
     await page.goto uri
@@ -32,18 +32,26 @@ scrape = (uri, username, password, selector) ->
     html_contents = await page.content()
     $ = cheerio.load html_contents
     await browser.close()
-    return 
-        contents: $(selector).text()
+    switch mode
+        when 1 then resp =
+                        contents: $(selector).text()
+        when 2 then resp =
+                        1: $('#tab1 > table > tbody > tr:nth-child(2)').text()
+                        2: $('#tab1 > table > tbody > tr:nth-child(3)').text()
+                        3: $('#tab1 > table > tbody > tr:nth-child(4)').text()
+                        4: $('#tab1 > table > tbody > tr:nth-child(5)').text()
+    return resp
 
 # API code
 app.get '/', (req, res) ->
     res.send '<title>Manodienynas API</title><h1>An API for Manodienynas and <i>maybe</i> Eduka dienynas.</h1>'
 
 app.post '/api/classandhomework', (req, res) -> 
-    res.json await scrape 'https://www.manodienynas.lt/1/lt/ajax/classhomework/home_work_show/' + req.body.id, req.body.username, req.body.password, 'body > table > tbody > tr:nth-child(' + req.body.tr + ') > td:nth-child(' + req.body.td + ')'
+    res.json await scrape 'https://www.manodienynas.lt/1/lt/ajax/classhomework/home_work_show/' + req.body.id, req.body.username, req.body.password, 1, 'body > table > tbody > tr:nth-child(' + req.body.tr + ') > td:nth-child(' + req.body.td + ')'
 
 app.post '/api/timetable', (req, res) ->
     res.json todomsg
 
 app.post '/api/holidays', (req, res) ->
-    res.json await scrape 'https://www.manodienynas.lt/1/lt/page/atostogos/atostogu_rodymas', req.body.username, req.body.password, '#tab1 > table > tbody > tr:nth-child(2) > td.pagelistbord'
+    res.json await scrape 'https://www.manodienynas.lt/1/lt/page/atostogos/atostogu_rodymas', req.body.username, req.body.password, 2
+
