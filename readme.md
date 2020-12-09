@@ -1,6 +1,6 @@
 # ManoDienynas API
 An API that scrapes Manodienynas and gives result
-# 1st step
+## 1st step
 Type `npm i` to install all modules.
 ## Running
 Type `npm run start` to run the API.
