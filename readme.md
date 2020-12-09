@@ -14,6 +14,6 @@ The schema is:
     "username": "",
     "password": "",
     "tr": "2",
-    "td": "3" 
+    "td": "" 
 }
 ```
