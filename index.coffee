@@ -42,7 +42,7 @@ app.get '/', (req, res) ->
 app.post '/api/classandhomework', (req, res) -> 
     res.json await scrape('https://www.manodienynas.lt/1/lt/ajax/classhomework/home_work_show/' + req.body.id, req.body.username, req.body.password, req.body.tr, req.body.td)
 
-app.post '/api/mail', (req, res) ->
+app.post '/api/timetable', (req, res) ->
     res.json todomsg
 
 app.post '/api/holidays', (req, res) ->
