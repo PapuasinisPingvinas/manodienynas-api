@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "coffee index.coffee",
-    "compile": "coffee -c index.coffee",
-    "test": "node index.js"
+    "compile": "coffee -c index.coffee"
   },
   "keywords": [],
   "author": "",
