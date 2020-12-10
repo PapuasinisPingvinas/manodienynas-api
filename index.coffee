@@ -31,15 +31,15 @@ scrape = (uri, username, password, mode, selector) ->
     await sleep 1000
     html_contents = await page.content()
     $ = cheerio.load html_contents
-    await browser.close()
     switch mode
         when 1 then resp =
-                        contents: $(selector).text()
+                        contents: $ selector.text()
         when 2 then resp =
-                        1: $('#tab1 > table > tbody > tr:nth-child(2)').text()
-                        2: $('#tab1 > table > tbody > tr:nth-child(3)').text()
-                        3: $('#tab1 > table > tbody > tr:nth-child(4)').text()
-                        4: $('#tab1 > table > tbody > tr:nth-child(5)').text()
+                        1: $ '#tab1 > table > tbody > tr:nth-child(2)'.text()
+                        2: $ '#tab1 > table > tbody > tr:nth-child(3)'.text()
+                        3: $ '#tab1 > table > tbody > tr:nth-child(4)'.text()
+                        4: $ '#tab1 > table > tbody > tr:nth-child(5)'.text() 
+    await browser.close()
     return resp
 
 # API code
@@ -54,4 +54,3 @@ app.post '/api/timetable', (req, res) ->
 
 app.post '/api/holidays', (req, res) ->
     res.json await scrape 'https://www.manodienynas.lt/1/lt/page/atostogos/atostogu_rodymas', req.body.username, req.body.password, 2
-
