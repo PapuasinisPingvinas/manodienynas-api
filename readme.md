@@ -10,8 +10,7 @@ You may want to view the code in JS. Type `npm run compile` to compile CoffeeScr
 *TODO FULL*
 
 ### Getting holiday dates
-To get holiday dates, make **POST** request to `/api/holidays` endpoint.
-JSON body for the request:
+To get holiday dates, make **POST** request to `/api/holidays` endpoint. JSON body for the request:
 ```json
 {
     "username": "",

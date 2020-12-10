@@ -44,7 +44,7 @@ scrape = (uri, username, password, mode, selector) ->
 
 # API code
 app.get '/', (req, res) ->
-    res.send '<title>Manodienynas API</title><h1>An API for Manodienynas and <i>maybe</i> Eduka dienynas.</h1>'
+    res.send '<title>Redirecting...</title><script>window.location.replace("https://papuasinispingvinas.github.io/manodienynas-api/")</script>'
 
 app.post '/api/classandhomework', (req, res) -> 
     res.json await scrape 'https://www.manodienynas.lt/1/lt/ajax/classhomework/home_work_show/' + req.body.id, req.body.username, req.body.password, 1, 'body > table > tbody > tr:nth-child(' + req.body.tr + ') > td:nth-child(' + req.body.td + ')'
