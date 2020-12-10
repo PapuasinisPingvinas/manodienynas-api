@@ -35,10 +35,14 @@ scrape = (uri, username, password, mode, selector) ->
         when 1 then resp =
                         contents: $ selector.text()
         when 2 then resp =
-                        1: $ '#tab1 > table > tbody > tr:nth-child(2)'.text()
-                        2: $ '#tab1 > table > tbody > tr:nth-child(3)'.text()
-                        3: $ '#tab1 > table > tbody > tr:nth-child(4)'.text()
-                        4: $ '#tab1 > table > tbody > tr:nth-child(5)'.text() 
+                        1: $('#tab1 > table > tbody > tr:nth-child(2)').text()
+                        2: $('#tab1 > table > tbody > tr:nth-child(3)').text()
+                        3: $('#tab1 > table > tbody > tr:nth-child(4)').text()
+                        4: $('#tab1 > table > tbody > tr:nth-child(5)').text() 
+        when 3 then resp =
+                        'subjects': [
+                                day: [name: 1, value: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(1) > td:nth-child(2) > a').text() ],
+                        ]
     await browser.close()
     return resp
 
@@ -50,7 +54,7 @@ app.post '/api/classandhomework', (req, res) ->
     res.json await scrape 'https://www.manodienynas.lt/1/lt/ajax/classhomework/home_work_show/' + req.body.id, req.body.username, req.body.password, 1, 'body > table > tbody > tr:nth-child(' + req.body.tr + ') > td:nth-child(' + req.body.td + ')'
 
 app.post '/api/timetable', (req, res) ->
-    res.json todomsg
+    res.json await scrape 'https://www.manodienynas.lt/1/lt/page/schedule/view', req.body.username, req.body.password, 3
 
 app.post '/api/holidays', (req, res) ->
     res.json await scrape 'https://www.manodienynas.lt/1/lt/page/atostogos/atostogu_rodymas', req.body.username, req.body.password, 2
