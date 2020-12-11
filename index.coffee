@@ -40,9 +40,74 @@ scrape = (uri, username, password, mode, selector) ->
                         3: $('#tab1 > table > tbody > tr:nth-child(4)').text()
                         4: $('#tab1 > table > tbody > tr:nth-child(5)').text() 
         when 3 then resp =
-                        'subjects': [
-                                day: [name: 1, value: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(1) > td:nth-child(2) > a').text() ],
-                        ]
+                         'subjects': [
+                                    days: 'Time': [
+                                        1: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(1) > td').text(),
+                                        2: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(2) > td').text(),
+                                        3: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(3) > td').text(),
+                                        4: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(4) > td').text(),
+                                        5: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(5) > td').text(),
+                                        6: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(6) > td').text(),
+                                        7: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(7) > td').text(),
+                                        8: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(8) > td').text(),
+                                        9: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(9) > td').text()
+                                        ],
+                                    days : 'Pirmadienis': [
+                                        1: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(1) > td:nth-child(2) > a').text(),
+                                        2: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').text(),
+                                        3: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(3) > td:nth-child(2) > a').text(),
+                                        4: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(4) > td:nth-child(2) > a').text(),
+                                        5: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(5) > td:nth-child(2) > a').text(),
+                                        6: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(6) > td:nth-child(2) > a').text(),
+                                        7: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(7) > td:nth-child(2) > a').text(),
+                                        8: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(8) > td:nth-child(2) > a').text(),
+                                        9: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(2) > table > tbody > tr:nth-child(9) > td:nth-child(2) > a').text()
+                                    ],
+                                    days: 'Antradienis': [
+                                        1: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(1) > td:nth-child(2) > a').text(),
+                                        2: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').text(),
+                                        3: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(3) > td:nth-child(2) > a').text(),
+                                        4: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(4) > td:nth-child(2) > a').text(),
+                                        5: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(5) > td:nth-child(2) > a').text(),
+                                        6: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(6) > td:nth-child(2) > a').text(),
+                                        7: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(7) > td:nth-child(2) > a').text(),
+                                        8: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(8) > td:nth-child(2) > a').text(),
+                                        9: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(9) > td:nth-child(2) > a').text()
+                                    ],
+                                    days: 'Trečiadienis': [
+                                        1: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(4) > table > tbody > tr:nth-child(1) > td:nth-child(2) > a').text(),
+                                        2: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(4) > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').text(),
+                                        3: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(4) > table > tbody > tr:nth-child(3) > td:nth-child(2) > a').text(),
+                                        4: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(4) > table > tbody > tr:nth-child(4) > td:nth-child(2) > a').text(),
+                                        5: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(4) > table > tbody > tr:nth-child(5) > td:nth-child(2) > a').text(),
+                                        6: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(4) > table > tbody > tr:nth-child(6) > td:nth-child(2) > a').text(),
+                                        7: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(4) > table > tbody > tr:nth-child(7) > td:nth-child(2) > a').text(),
+                                        8: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(4) > table > tbody > tr:nth-child(8) > td:nth-child(2) > a').text(),
+                                        9: $('#sheduleContTable > tbody > tr:nth-child(2) > td:nth-child(4) > table > tbody > tr:nth-child(9) > td:nth-child(2) > a').text()
+                                    ],
+                                    days: 'Ketvirtadienis': [
+                                        1: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr:nth-child(1) > td:nth-child(2) > a').text(),
+                                        2: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').text(),
+                                        3: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr:nth-child(3) > td:nth-child(2) > a').text(),
+                                        4: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr:nth-child(4) > td:nth-child(2) > a').text(),
+                                        5: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr:nth-child(5) > td:nth-child(2) > a').text(),
+                                        6: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr:nth-child(6) > td:nth-child(2) > a').text(),
+                                        7: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr:nth-child(7) > td:nth-child(2) > a').text(),
+                                        8: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr:nth-child(8) > td:nth-child(2) > a').text(),
+                                        9: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(2) > table > tbody > tr:nth-child(9) > td:nth-child(2) > a').text()
+                                    ],
+                                    days: 'Penktadienis': [
+                                        1: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(1) > td:nth-child(2) > a').text(),
+                                        2: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(2) > td:nth-child(2) > a').text(),
+                                        3: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(3) > td:nth-child(2) > a').text(),
+                                        4: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(4) > td:nth-child(2) > a').text(),
+                                        5: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(5) > td:nth-child(2) > a').text(),
+                                        6: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(6) > td:nth-child(2) > a').text(),
+                                        7: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(7) > td:nth-child(2) > a').text(),
+                                        8: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(8) > td:nth-child(2) > a').text(),
+                                        9: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(9) > td:nth-child(2) > a').text()                                        
+                                    ]
+                                    ]
     await browser.close()
     return resp
 
