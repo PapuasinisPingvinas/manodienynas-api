@@ -118,8 +118,8 @@ app.get '/', (req, res) ->
 app.post '/api/classandhomework', (req, res) -> 
     res.json await scrape 'https://www.manodienynas.lt/1/lt/ajax/classhomework/home_work_show/' + req.body.id, req.body.username, req.body.password, 1, 'body > table > tbody > tr:nth-child(' + req.body.tr + ') > td:nth-child(' + req.body.td + ')'
 
-app.post '/api/timetable', (req, res) ->
-    res.json await scrape 'https://www.manodienynas.lt/1/lt/page/schedule/view', req.body.username, req.body.password, 3
-
 app.post '/api/holidays', (req, res) ->
     res.json await scrape 'https://www.manodienynas.lt/1/lt/page/atostogos/atostogu_rodymas', req.body.username, req.body.password, 2
+
+app.post '/api/timetable', (req, res) ->
+    res.json await scrape 'https://www.manodienynas.lt/1/lt/page/schedule/view', req.body.username, req.body.password, 3
