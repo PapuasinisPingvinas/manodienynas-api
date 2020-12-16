@@ -1,4 +1,4 @@
-# ManoDienynas API
+# (An unofficial) ManoDienynas API
 An API that scrapes Manodienynas and gives result in JSON.
 ## 1st step
 Type `npm i` to install all modules.
