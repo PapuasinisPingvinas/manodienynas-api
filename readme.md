@@ -8,9 +8,16 @@ Type `npm run start` to run the API.
 You may want to view the code in JS. Type `npm run compile` to compile CoffeeScript.
 ## API tutorial
 *TODO FULL*
-
 ### Getting holiday dates
 To get holiday dates, make **POST** request to `/api/holidays` endpoint. JSON body for the request:
+```json
+{
+    "username": "",
+    "password": ""
+}
+```
+### Getting timetable
+To get timetable, make **POST** request to `/api/timetable` endpoint. JSON body for the request:
 ```json
 {
     "username": "",
