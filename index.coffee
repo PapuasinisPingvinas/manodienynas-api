@@ -108,6 +108,7 @@ scrape = (uri, username, password, mode, selector) ->
                                         9: $('#sheduleContTable > tbody > tr:nth-child(4) > td:nth-child(3) > table > tbody > tr:nth-child(9) > td:nth-child(2) > a').text()                                        
                                     ]
                                     ]
+        when 4 then 
     await browser.close()
     return resp
 
@@ -123,3 +124,6 @@ app.post '/api/holidays', (req, res) ->
 
 app.post '/api/timetable', (req, res) ->
     res.json await scrape 'https://www.manodienynas.lt/1/lt/page/schedule/view', req.body.username, req.body.password, 3
+
+app.post '/api/homework/getid', (req, res) ->
+    res.json await scrape 'https://www.manodienynas.lt/1/lt/page/marks_pupil/marks', req.body.username, req.body.password, 4
