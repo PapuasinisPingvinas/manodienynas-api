@@ -117,7 +117,7 @@ app.get '/', (req, res) ->
     res.send '<title>Redirecting...</title><script>window.location.replace("https://papuasinispingvinas.github.io/manodienynas-api/")</script>'
 
 app.post '/api/classandhomework', (req, res) -> 
-    res.json await scrape 'https://www.manodienynas.lt/1/lt/ajax/classhomework/home_work_show/' + req.body.id, req.body.username, req.body.password, 1, 'body > table > tbody > tr:nth-child(' + req.body.tr + ') > td:nth-child(' + req.body.td + ')'
+    res.json await scrape "https://www.manodienynas.lt/1/lt/ajax/classhomework/home_work_show/#{req.body.id}" , req.body.username, req.body.password, 1, "body > table > tbody > tr:nth-child(#{req.body.tr}) > td:nth-child(#{req.body.td})"
 
 app.post '/api/holidays', (req, res) ->
     res.json await scrape 'https://www.manodienynas.lt/1/lt/page/atostogos/atostogu_rodymas', req.body.username, req.body.password, 2
