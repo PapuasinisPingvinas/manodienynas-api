@@ -22,6 +22,11 @@ export getPrerenderedHtml = (uri, email, password) ->
     await browser.close()
     return html_contents
 
+export scrapeHtmlTables = (html, selectorArray) ->
+    $ = cheerio.load(html)
+    handle = (Selectors) -> $(Selectors)
+    await handle Selectors for Selectors in selectorArray
+    return Selectors
 export class parsecorrect
     constructor: (@mainArray) ->
         parse: (uriNeeeded) ->
@@ -30,4 +35,12 @@ export class parsecorrect
 export class Holidays extends parsecorrect
     parse: ->
         super 'https://www.manodienynas.lt/1/lt/page/atostogos/atostogu_rodymas'
-        
+
+export class Timetable extends parsecorrect
+    parse: ->
+        super 'https://www.manodienynas.lt/1/lt/page/atostogos/atostogu_rodymas'
+
+
+export class Holidays extends parsecorrect
+    parse: ->
+        super 'https://www.manodienynas.lt/1/lt/page/atostogos/atostogu_rodymas'
