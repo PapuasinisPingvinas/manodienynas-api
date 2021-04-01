@@ -1,4 +1,4 @@
-# WARNING: This project is suspended.
+# WARNING: This project is currently suspended due to uninterest.
 # (An unofficial) ManoDienynas API
 An API that scrapes Manodienynas and gives result in JSON.
 ## 1st step
